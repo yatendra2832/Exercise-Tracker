@@ -13,8 +13,15 @@ app.use(
     })
 );
 
+// Routes
+const exerciseRouter = require('./Routes/exercises');
+const userRouter = require('./Routes/users');
+
 // middleware
 app.use(express.json());
+
+app.use('/exercise', exerciseRouter);
+app.use('/users', userRouter);
 
 // Server listening
 mongoose
