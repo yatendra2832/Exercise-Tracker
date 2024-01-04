@@ -6,7 +6,7 @@ const Exercise = require('../models/exercisemodel');
 router.route('/').get(async (req, res) => {
     try {
         const exercise = await Exercise.find();
-        return res.status(200).json({ exercise });
+        return res.status(200).json(exercise);
     } catch (error) {
         console.log(error.message);
         return res.status(404).send('Error: ', error.message)
